@@ -14,8 +14,8 @@ function App() {
             <p className={"text-dark-navy pt-3 text-[14px] italic leading-none"}>Pick a subject to get started</p>
           </div>
 
-          <ul className={"mx-6 space-y-3 pt-[40px]"}>
-            <li className={"flex items-center gap-x-[16px] rounded-lg bg-white p-3"}>
+          <div className={"mx-6 space-y-3 pt-[40px]"}>
+            <button className={"flex w-full items-center gap-x-[16px] rounded-lg bg-white p-3"}>
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 6C0 2.68629 2.68629 0 6 0H34C37.3137 0 40 2.68629 40 6V34C40 37.3137 37.3137 40 34 40H6C2.68629 40 0 37.3137 0 34V6Z" fill="#FFF1E9" />
                 <path
@@ -23,10 +23,10 @@ function App() {
                   fill="#FF7E35"
                 />
               </svg>
-
               <h1 className={"text-dark-navy text-[18px] font-medium"}>HTML</h1>
-            </li>
-            <li className={"flex items-center gap-x-[16px] rounded-lg bg-white p-3"}>
+            </button>
+
+            <button className={"flex w-full items-center gap-x-[16px] rounded-lg bg-white p-3"}>
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 6C0 2.68629 2.68629 0 6 0H34C37.3137 0 40 2.68629 40 6V34C40 37.3137 37.3137 40 34 40H6C2.68629 40 0 37.3137 0 34V6Z" fill="#E0FDEF" />
                 <path
@@ -36,8 +36,9 @@ function App() {
               </svg>
 
               <h1 className={"text-dark-navy text-[18px] font-medium"}>CSS</h1>
-            </li>
-            <li className={"flex items-center gap-x-[16px] rounded-lg bg-white p-3"}>
+            </button>
+
+            <button className={"flex w-full items-center gap-x-[16px] rounded-lg bg-white p-3"}>
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 6C0 2.68629 2.68629 0 6 0H34C37.3137 0 40 2.68629 40 6V34C40 37.3137 37.3137 40 34 40H6C2.68629 40 0 37.3137 0 34V6Z" fill="#EBF0FF" />
                 <path
@@ -46,8 +47,9 @@ function App() {
                 />
               </svg>
               <h1 className={"text-dark-navy text-[18px] font-medium"}>Javascript</h1>
-            </li>
-            <li className={"flex items-center gap-x-[16px] rounded-lg bg-white p-3"}>
+            </button>
+
+            <button className={"flex w-full items-center gap-x-[16px] rounded-lg bg-white p-3"}>
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 6C0 2.68629 2.68629 0 6 0H34C37.3137 0 40 2.68629 40 6V34C40 37.3137 37.3137 40 34 40H6C2.68629 40 0 37.3137 0 34V6Z" fill="#F6E7FF" />
                 <path
@@ -56,8 +58,8 @@ function App() {
                 />
               </svg>
               <h1 className={"text-dark-navy text-[18px] font-medium"}>Accessibility</h1>
-            </li>
-          </ul>
+            </button>
+          </div>
         </main>
       </div>
     </>
