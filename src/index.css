@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: "Rubik";
-    src: url('src/assets/fonts/Rubik-VariableFont_wght.ttf');
-}
+/*@font-face {*/
+/*    font-family: "Rubik";*/
+/*    src: url('src/assets/fonts/Rubik-VariableFont_wght.ttf');*/
+/*}*/
 
-@font-face {
-    font-family: "Rubik";
-    src: url('src/assets/fonts/Rubik-Italic-VariableFont_wght.ttf');
+/*@font-face {*/
+/*    font-family: "Rubik";*/
+/*    src: url('src/assets/fonts/Rubik-Italic-VariableFont_wght.ttf');*/
+/*}*/
+
+#test {
+    background-image: url("/src/assets/images/eclipse-mobile-light.svg");
+    background-repeat: no-repeat;
+
 }

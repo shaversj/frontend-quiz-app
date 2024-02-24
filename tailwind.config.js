@@ -7,6 +7,10 @@ export default {
         sm: "375px",
         lg: "1440px",
       },
+      colors: {
+        "dark-navy": "#313E51",
+        "light-grey": "#f4f6fa",
+      },
       fontFamily: {
         Rubik: ["Rubik", "sans-serif"],
       },
