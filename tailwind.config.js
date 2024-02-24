@@ -9,11 +9,15 @@ export default {
       },
       colors: {
         "dark-navy": "#313E51",
+        navy: "#3B4D66",
+        "grey-navy": "#626c7f",
         "light-grey": "#f4f6fa",
         "secondary-purple": "#A729F5",
       },
       fontFamily: {
-        Rubik: ["Rubik", "sans-serif"],
+        "Rubik-Regular": ["Rubik-Regular", "sans-serif"],
+        "Rubik-Medium": ["Rubik-Medium", "sans-serif"],
+        "Rubik-Italic": ["Rubik-Italic", "sans-serif"],
       },
     },
   },

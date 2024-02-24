@@ -1,17 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/*@font-face {*/
-/*    font-family: "Rubik";*/
-/*    src: url('src/assets/fonts/Rubik-VariableFont_wght.ttf');*/
-/*}*/
+html {
+    -webkit-font-smoothing: antialiased;
+}
 
-/*@font-face {*/
-/*    font-family: "Rubik";*/
-/*    src: url('src/assets/fonts/Rubik-Italic-VariableFont_wght.ttf');*/
-/*}*/
+@font-face {
+    font-family: "Rubik-Medium";
+    src: url('src/assets/fonts/static/Rubik-Medium.ttf')
+
+}
+
+@font-face {
+    font-family: "Rubik-Regular";
+    src: url('src/assets/fonts/static/Rubik-Regular.ttf')
+
+}
+
+@font-face {
+    font-family: "Rubik-Italic";
+    src: url('src/assets/fonts/static/Rubik-Italic.ttf')
+
+}
+
+::-webkit-progress-bar {
+    padding: 4px;
+    height: 16px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+::-webkit-progress-value {
+    height: 8px;
+    border-radius: 20px;
+    background-color: #A729F5;
+}
 
 #test {
     background-image: url("/src/assets/images/eclipse-mobile-light.svg");
