@@ -10,6 +10,7 @@ export default {
       colors: {
         "dark-navy": "#313E51",
         "light-grey": "#f4f6fa",
+        "secondary-purple": "#A729F5",
       },
       fontFamily: {
         Rubik: ["Rubik", "sans-serif"],

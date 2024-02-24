@@ -1,9 +1,11 @@
+import Header from "./Header.jsx";
+
 function App() {
   return (
     <>
       <div id={"test"} className={"font-Rubik bg-light-grey h-[812px] max-w-screen-sm"}>
-        <header></header>
-        <main className={""}>
+        <Header />
+        <main className={"pt-6"}>
           <div className={"px-6"}>
             <h1 className={"text-dark-navy text-[40px] font-light leading-[2.82rem]"}>
               Welcome to the <strong className={"font-medium"}>Frontend Quiz!</strong>
