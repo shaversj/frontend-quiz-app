@@ -1,6 +1,15 @@
 import QuizButton from "./QuizButton.jsx";
 
-const QuizQuestion = () => {
+const QuizQuestion = ({
+  isAnswerSubmitted,
+  highlightHandler,
+  highlightedIndex,
+  question,
+  indexOfCurrentQuestion,
+  maxNumberOfQuestions,
+  submitAnswerHandler,
+  nextQuestionHandler,
+}) => {
   const buttons = [
     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 6C0 2.68629 2.68629 0 6 0H34C37.3137 0 40 2.68629 40 6V34C40 37.3137 37.3137 40 34 40H6C2.68629 40 0 37.3137 0 34V6Z" fill="#F4F6FA" />
@@ -32,77 +41,34 @@ const QuizQuestion = () => {
     </svg>,
   ];
 
-  const data = {
-    title: "Accessibility",
-    icon: "./assets/images/icon-accessibility.svg",
-    questions: [
-      {
-        question: "What does 'WCAG' stand for?",
-        options: ["Web Content Accessibility Guidelines", "Web Compliance Accessibility Guide", "Web Content Accessibility Goals", "Website Compliance and Accessibility Guidelines"],
-        answer: "Web Content Accessibility Guidelines",
-      },
-      {
-        question: "Which element is used to provide alternative text for images for screen reader users?",
-        options: ["<alt>", "<figcaption>", "<description>", "<img alt='description'>"],
-        answer: "<img alt='description'>",
-      },
-      {
-        question: "What does ARIA stand for in web development?",
-        options: ["Accessible Rich Internet Applications", "Advanced Responsive Internet Assistance", "Accessible Responsive Internet Applications", "Automated Responsive Internet Actions"],
-        answer: "Accessible Rich Internet Applications",
-      },
-      {
-        question: "Which of the following is not a principle of the WCAG?",
-        options: ["Perceivable", "Dependable", "Operable", "Understandable"],
-        answer: "Dependable",
-      },
-      {
-        question: "Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?",
-        options: ["3:1", "4.5:1", "7:1", "2:1"],
-        answer: "4.5:1",
-      },
-      {
-        question: "Which of the following elements is inherently focusable, meaning it can receive focus without a 'tabindex' attribute?",
-        options: ["<div>", "<span>", "<a href='...'>", "<p>"],
-        answer: "<a href='...'>",
-      },
-      {
-        question: "What is the purpose of the 'lang' attribute in an HTML page?",
-        options: ["To specify the scripting language", "To define the character set", "To indicate the language of the page content", "To declare a language pack"],
-        answer: "To indicate the language of the page content",
-      },
-      {
-        question: "Which guideline ensures that content is accessible by keyboard as well as by mouse?",
-        options: ["Keyboard Accessible", "Mouse Independence", "Device Independence", "Operable Controls"],
-        answer: "Keyboard Accessible",
-      },
-      {
-        question: "What is the role of 'skip navigation' links in web accessibility?",
-        options: [
-          "To skip over primary navigation to the main content",
-          "To provide shortcuts to different sections of the website",
-          "To help users skip unwanted sections like advertisements",
-          "To bypass broken links in the navigation",
-        ],
-        answer: "To skip over primary navigation to the main content",
-      },
-    ],
-  };
-
   return (
     <>
       <div className={"px-6 pt-[32px]"}>
         <div className={"font-Rubik"}>
-          <p className={"font-Rubik-Italic text-grey-navy text-[14px]"}>Question 1 of 10</p>
-          <p className={"font-Rubik-Medium pt-3 text-[20px] leading-6 text-dark-navy"}>Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</p>
-          <progress className={"w-full pt-[24px]"} max={10} value={5} />
-          <div className={"space-y-3 pt-[50px]"}>
-            {data.questions[4].options.map((question, idx) => (
-              <QuizButton icon={buttons[idx]} text={question} />
-            ))}
-            <button className={"w-full rounded-xl bg-secondary-purple py-[19px] leading-none"}>
-              <span className={"font-Rubik-Medium text-[18px] text-white"}>Submit Answer</span>
-            </button>
+          <p className={"font-Rubik-Italic text-grey-navy text-[14px]"}>
+            Question {indexOfCurrentQuestion + 1} of {maxNumberOfQuestions}
+          </p>
+          <p className={"font-Rubik-Medium pt-3 text-[20px] leading-6 text-dark-navy"}>{question.question}</p>
+          <progress className={"w-full pt-[24px]"} max={maxNumberOfQuestions} value={indexOfCurrentQuestion + 1} />
+          <div className={"pt-[50px]"}>
+            <form onSubmit={isAnswerSubmitted ? (e) => nextQuestionHandler(e) : (e) => submitAnswerHandler(e)} className={"space-y-3"}>
+              {question.options.map((option, idx) => (
+                <QuizButton key={idx} icon={buttons[idx]} text={option} onClickHandler={highlightHandler} idx={idx} highlightedIndex={highlightedIndex} />
+              ))}
+              {isAnswerSubmitted ? (
+                <>
+                  <button type={"submit"} className={"w-full rounded-xl bg-secondary-purple py-[19px] leading-none"}>
+                    <span className={"font-Rubik-Medium text-[18px] text-white"}>Next Question</span>
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button type={"submit"} className={"w-full rounded-xl bg-secondary-purple py-[19px] leading-none"}>
+                    <span className={"font-Rubik-Medium text-[18px] text-white"}>Submit Answer</span>
+                  </button>
+                </>
+              )}
+            </form>
           </div>
         </div>
       </div>
