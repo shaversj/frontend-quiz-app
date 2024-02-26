@@ -2,7 +2,7 @@ export const quizData = {
   quizzes: [
     {
       title: "HTML",
-      icon: "./assets/images/icon-html.svg",
+      icon: "src/assets/images/html.svg",
       questions: [
         {
           question: "What does HTML stand for?",
@@ -11,7 +11,12 @@ export const quizData = {
         },
         {
           question: "Which of the following is the correct structure for an HTML document?",
-          options: ["<html><head></head><body></body></html>", "<head><html></html><body></body></head>", "<body><head></head><html></html></body>", "<html><body></body><head></head></html>"],
+          options: [
+            "<html><head></head><body></body></html>",
+            "<head><html></html><body></body></head>",
+            "<body><head></head><html></html></body>",
+            "<html><body></body><head></head></html>",
+          ],
           answer: "<html><head></head><body></body></html>",
         },
         {
@@ -56,14 +61,19 @@ export const quizData = {
         },
         {
           question: "In HTML, what does the `fieldset` tag do?",
-          options: ["It is used to group related data in a form.", "It sets the field to a fixed size.", "It automatically validates the fields within a form.", "It hides the fields in a form."],
+          options: [
+            "It is used to group related data in a form.",
+            "It sets the field to a fixed size.",
+            "It automatically validates the fields within a form.",
+            "It hides the fields in a form.",
+          ],
           answer: "It is used to group related data in a form.",
         },
       ],
     },
     {
       title: "CSS",
-      icon: "./assets/images/icon-css.svg",
+      icon: "src/assets/images/css.svg",
       questions: [
         {
           question: "What does CSS stand for?",
@@ -119,7 +129,7 @@ export const quizData = {
     },
     {
       title: "JavaScript",
-      icon: "./assets/images/icon-js.svg",
+      icon: "src/assets/images/javascript.svg",
       questions: [
         {
           question: "Which syntax is correct to output 'Hello World' in an alert box?",
@@ -185,11 +195,16 @@ export const quizData = {
     },
     {
       title: "Accessibility",
-      icon: "./assets/images/icon-accessibility.svg",
+      icon: "src/assets/images/accessibility.svg",
       questions: [
         {
           question: "What does 'WCAG' stand for?",
-          options: ["Web Content Accessibility Guidelines", "Web Compliance Accessibility Guide", "Web Content Accessibility Goals", "Website Compliance and Accessibility Guidelines"],
+          options: [
+            "Web Content Accessibility Guidelines",
+            "Web Compliance Accessibility Guide",
+            "Web Content Accessibility Goals",
+            "Website Compliance and Accessibility Guidelines",
+          ],
           answer: "Web Content Accessibility Guidelines",
         },
         {
@@ -199,7 +214,12 @@ export const quizData = {
         },
         {
           question: "What does ARIA stand for in web development?",
-          options: ["Accessible Rich Internet Applications", "Advanced Responsive Internet Assistance", "Accessible Responsive Internet Applications", "Automated Responsive Internet Actions"],
+          options: [
+            "Accessible Rich Internet Applications",
+            "Advanced Responsive Internet Assistance",
+            "Accessible Responsive Internet Applications",
+            "Automated Responsive Internet Actions",
+          ],
           answer: "Accessible Rich Internet Applications",
         },
         {

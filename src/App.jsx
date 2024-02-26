@@ -23,7 +23,7 @@ function App() {
       <div id={"test"} className={"h-[812px] max-w-screen-sm bg-light-grey font-Rubik"}>
         {isQuizVisible ? (
           <>
-            <Header />
+            <Header iconPath={quiz[0].icon} text={quiz[0].title} />
             <QuizList quiz={quiz} maxNumberOfQuestions={maxNumberOfQuestions} />
           </>
         ) : (

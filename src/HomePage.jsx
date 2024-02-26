@@ -24,7 +24,7 @@ const HomePage = ({ startQuizHandler }) => {
             <h1 className={"text-[18px] font-medium text-dark-navy"}>HTML</h1>
           </button>
 
-          <button className={"flex w-full items-center gap-x-[16px] rounded-lg bg-white p-3"}>
+          <button onClick={() => startQuizHandler("CSS")} className={"flex w-full items-center gap-x-[16px] rounded-lg bg-white p-3"}>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 6C0 2.68629 2.68629 0 6 0H34C37.3137 0 40 2.68629 40 6V34C40 37.3137 37.3137 40 34 40H6C2.68629 40 0 37.3137 0 34V6Z" fill="#E0FDEF" />
               <path
@@ -36,7 +36,7 @@ const HomePage = ({ startQuizHandler }) => {
             <h1 className={"text-[18px] font-medium text-dark-navy"}>CSS</h1>
           </button>
 
-          <button className={"flex w-full items-center gap-x-[16px] rounded-lg bg-white p-3"}>
+          <button onClick={() => startQuizHandler("JavaScript")} className={"flex w-full items-center gap-x-[16px] rounded-lg bg-white p-3"}>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 6C0 2.68629 2.68629 0 6 0H34C37.3137 0 40 2.68629 40 6V34C40 37.3137 37.3137 40 34 40H6C2.68629 40 0 37.3137 0 34V6Z" fill="#EBF0FF" />
               <path
@@ -47,7 +47,7 @@ const HomePage = ({ startQuizHandler }) => {
             <h1 className={"text-[18px] font-medium text-dark-navy"}>Javascript</h1>
           </button>
 
-          <button className={"flex w-full items-center gap-x-[16px] rounded-lg bg-white p-3"}>
+          <button onClick={() => startQuizHandler("Accessibility")} className={"flex w-full items-center gap-x-[16px] rounded-lg bg-white p-3"}>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 6C0 2.68629 2.68629 0 6 0H34C37.3137 0 40 2.68629 40 6V34C40 37.3137 37.3137 40 34 40H6C2.68629 40 0 37.3137 0 34V6Z" fill="#F6E7FF" />
               <path
