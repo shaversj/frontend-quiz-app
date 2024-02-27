@@ -24,6 +24,12 @@ html {
 
 }
 
+@font-face {
+    font-family: "Rubik-Light";
+    src: url('src/assets/fonts/static/Rubik-Light.ttf')
+
+}
+
 ::-webkit-progress-bar {
     padding: 4px;
     height: 16px;

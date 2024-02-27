@@ -3,6 +3,7 @@ import HomePage from "./HomePage.jsx";
 import { useState } from "react";
 import QuizList from "./QuizList.jsx";
 import { quizData } from "./quizData.jsx";
+import ScorePage from "./ScorePage.jsx";
 
 function App() {
   const [maxNumberOfQuestions, setMaxNumberOfQuestions] = useState(0);
@@ -28,8 +29,9 @@ function App() {
           </>
         ) : (
           <>
-            <Header />
-            <HomePage startQuizHandler={startQuizHandler} />
+            <ScorePage />
+            {/*<Header />*/}
+            {/*<HomePage startQuizHandler={startQuizHandler} />*/}
           </>
         )}
       </div>

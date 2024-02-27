@@ -18,6 +18,7 @@ export default {
         "Rubik-Regular": ["Rubik-Regular", "sans-serif"],
         "Rubik-Medium": ["Rubik-Medium", "sans-serif"],
         "Rubik-Italic": ["Rubik-Italic", "sans-serif"],
+        "Rubik-Light": ["Rubik-Light", "sans-serif"],
       },
     },
   },
