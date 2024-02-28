@@ -19,19 +19,25 @@ function App() {
     setIsQuizVisible(true);
   };
 
+  const handlePlayAgainClick = () => {
+    setMaxNumberOfQuestions(0);
+    setActiveQuizName(null);
+    setIsQuizVisible(false);
+    setQuiz(null);
+  };
+
   return (
     <>
-      <div id={"test"} className={"h-[812px] max-w-screen-sm bg-light-grey font-Rubik"}>
+      <div id={"test"} className={"font-Rubik h-[812px] max-w-screen-sm bg-light-grey"}>
         {isQuizVisible ? (
           <>
             <Header iconPath={quiz[0].icon} text={quiz[0].title} />
-            <QuizList quiz={quiz} maxNumberOfQuestions={maxNumberOfQuestions} />
+            <QuizList quiz={quiz} maxNumberOfQuestions={maxNumberOfQuestions} handlePlayAgainClick={handlePlayAgainClick} />
           </>
         ) : (
           <>
-            <ScorePage />
-            {/*<Header />*/}
-            {/*<HomePage startQuizHandler={startQuizHandler} />*/}
+            <Header />
+            <HomePage startQuizHandler={startQuizHandler} />
           </>
         )}
       </div>
