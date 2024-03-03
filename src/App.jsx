@@ -1,10 +1,11 @@
 import Header from "./Header.jsx";
 import HomePage from "./HomePage.jsx";
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import QuizList from "./QuizList.jsx";
 import { quizData } from "./quizData.jsx";
 import ScorePage from "./ScorePage.jsx";
 
+const initialState = quizData;
 function App() {
   const [maxNumberOfQuestions, setMaxNumberOfQuestions] = useState(0);
   const [isQuizVisible, setIsQuizVisible] = useState(false);
@@ -26,18 +27,35 @@ function App() {
     setQuiz(null);
   };
 
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "START_QUIZ":
+        const selectedQuiz = quizData.quizzes.filter((quiz) => quiz.title === action.title)[0];
+        setIsQuizVisible(true);
+        setMaxNumberOfQuestions(selectedQuiz.questions.length);
+        return selectedQuiz;
+      case "PLAY_AGAIN":
+        setMaxNumberOfQuestions(0);
+        setActiveQuizName(null);
+        setIsQuizVisible(false);
+        return initialState;
+    }
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
     <>
       <div id={"test"} className={"font-Rubik h-[812px] max-w-screen-sm bg-light-grey"}>
         {isQuizVisible ? (
           <>
-            <Header iconPath={quiz[0].icon} text={quiz[0].title} />
-            <QuizList quiz={quiz} maxNumberOfQuestions={maxNumberOfQuestions} handlePlayAgainClick={handlePlayAgainClick} />
+            <Header iconPath={state.icon} text={state.title} />
+            <QuizList quiz={state} maxNumberOfQuestions={maxNumberOfQuestions} handlePlayAgainClick={handlePlayAgainClick} />
           </>
         ) : (
           <>
             <Header />
-            <HomePage startQuizHandler={startQuizHandler} />
+            <HomePage startQuizHandler={startQuizHandler} dispatch={dispatch} />
           </>
         )}
       </div>

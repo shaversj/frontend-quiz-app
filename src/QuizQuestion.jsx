@@ -3,12 +3,13 @@ import QuizButton from "./QuizButton.jsx";
 const QuizQuestion = ({
   isAnswerSubmitted,
   highlightHandler,
-  highlightedIndex,
+  indexOfSelectedAnswer,
   question,
   indexOfCurrentQuestion,
   maxNumberOfQuestions,
   submitAnswerHandler,
   nextQuestionHandler,
+  questionDispatch,
 }) => {
   const buttons = [
     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,15 +46,26 @@ const QuizQuestion = ({
     <>
       <div className={"px-6 pt-[32px]"}>
         <div className={"font-Rubik"}>
-          <p className={"font-Rubik-Italic text-grey-navy text-[14px]"}>
+          <p className={"font-Rubik-Italic text-[14px] text-grey-navy"}>
             Question {indexOfCurrentQuestion + 1} of {maxNumberOfQuestions}
           </p>
-          <p className={"font-Rubik-Medium pt-3 text-[20px] leading-6 text-dark-navy"}>{question.question}</p>
+          <p className={"pt-3 font-Rubik-Medium text-[20px] leading-6 text-dark-navy"}>{question.question}</p>
           <progress className={"w-full pt-[24px]"} max={maxNumberOfQuestions} value={indexOfCurrentQuestion + 1} />
           <div className={"pt-[50px]"}>
-            <form onSubmit={isAnswerSubmitted ? (e) => nextQuestionHandler(e) : (e) => submitAnswerHandler(e)} className={"space-y-3"}>
+            <form
+              onSubmit={isAnswerSubmitted ? (e) => questionDispatch({ type: "GOTO_NEXT_QUESTION", e }) : (e) => questionDispatch({ type: "SUBMIT_ANSWER", e })}
+              className={"space-y-3"}
+            >
               {question.options.map((option, idx) => (
-                <QuizButton key={idx} icon={buttons[idx]} text={option} onClickHandler={highlightHandler} idx={idx} highlightedIndex={highlightedIndex} />
+                <QuizButton
+                  key={idx}
+                  icon={buttons[idx]}
+                  text={option}
+                  onClickHandler={highlightHandler}
+                  idx={idx}
+                  highlightedIndex={indexOfSelectedAnswer}
+                  questionDispatch={questionDispatch}
+                />
               ))}
               {isAnswerSubmitted ? (
                 <>
