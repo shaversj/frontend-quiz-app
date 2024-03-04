@@ -1,16 +1,6 @@
 import QuizButton from "./QuizButton.jsx";
 
-const QuizQuestion = ({
-  isAnswerSubmitted,
-  highlightHandler,
-  indexOfSelectedAnswer,
-  question,
-  indexOfCurrentQuestion,
-  maxNumberOfQuestions,
-  submitAnswerHandler,
-  nextQuestionHandler,
-  questionDispatch,
-}) => {
+const QuizQuestion = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, indexOfCurrentQuestion, maxNumberOfQuestions, questionDispatch }) => {
   const buttons = [
     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 6C0 2.68629 2.68629 0 6 0H34C37.3137 0 40 2.68629 40 6V34C40 37.3137 37.3137 40 34 40H6C2.68629 40 0 37.3137 0 34V6Z" fill="#F4F6FA" />
@@ -57,15 +47,7 @@ const QuizQuestion = ({
               className={"space-y-3"}
             >
               {question.options.map((option, idx) => (
-                <QuizButton
-                  key={idx}
-                  icon={buttons[idx]}
-                  text={option}
-                  onClickHandler={highlightHandler}
-                  idx={idx}
-                  highlightedIndex={indexOfSelectedAnswer}
-                  questionDispatch={questionDispatch}
-                />
+                <QuizButton key={idx} icon={buttons[idx]} text={option} idx={idx} highlightedIndex={indexOfSelectedAnswer} questionDispatch={questionDispatch} />
               ))}
               {isAnswerSubmitted ? (
                 <>

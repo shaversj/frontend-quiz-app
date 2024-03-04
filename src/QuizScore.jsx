@@ -1,4 +1,4 @@
-const ScorePage = ({ iconPath, text, numOfCorrectAnswers, numOfQuestions, handlePlayAgainClick }) => {
+const QuizScore = ({ iconPath, text, numOfCorrectAnswers, numOfQuestions, quizDispatch }) => {
   return (
     <>
       <div className={"px-6 pt-[32px] text-dark-navy"}>
@@ -15,7 +15,7 @@ const ScorePage = ({ iconPath, text, numOfCorrectAnswers, numOfQuestions, handle
           <span className={"block font-Rubik-Regular text-[18px] leading-none"}>out of {numOfQuestions}</span>
         </div>
 
-        <button onClick={handlePlayAgainClick} className={"mt-3 w-full rounded-xl bg-secondary-purple py-[19px] leading-none"}>
+        <button onClick={() => quizDispatch({ type: "PLAY_AGAIN" })} className={"mt-3 w-full rounded-xl bg-secondary-purple py-[19px] leading-none"}>
           <span className={"font-Rubik-Medium text-[18px] text-white"}>Play Again</span>
         </button>
       </div>
@@ -23,4 +23,4 @@ const ScorePage = ({ iconPath, text, numOfCorrectAnswers, numOfQuestions, handle
   );
 };
 
-export default ScorePage;
+export default QuizScore;
