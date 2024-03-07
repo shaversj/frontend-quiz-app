@@ -1,6 +1,24 @@
 import Icon from "./Icon.jsx";
 
-const QuizButton = ({ iconIndex, text, idx, highlightedIndex, questionDispatch }) => {
+const QuizButton = ({ iconIndex, text, idx, highlightedIndex, questionDispatch, isSubmitted }) => {
+  const isSelected = highlightedIndex === idx;
+  const isCorrect = "";
+  let buttonColor = "";
+  let iconColor = "";
+  if (isSelected && isSubmitted && isCorrect) {
+    // green border and green checkmark
+    buttonColor = "";
+  } else if (isSubmitted && isCorrect) {
+    // green checkmark
+    buttonColor = "";
+  } else if (isSelected && isSubmitted && !isCorrect) {
+    // red border and red x
+    buttonColor = "";
+  } else if (isSelected) {
+    buttonColor = "flex w-full items-center gap-x-[16px] rounded-xl border-4 border-secondary-purple bg-white p-3 shadow-lg";
+  } else {
+    buttonColor = "flex w-full items-center gap-x-[16px] rounded-xl bg-white p-3 shadow-lg";
+  }
   const addSpaceBetweenColon = /(\d+(\.\d+)?)\:/g;
   return (
     <button

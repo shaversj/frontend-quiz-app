@@ -9,6 +9,7 @@ const QuizList = ({ quiz, quizDispatch }) => {
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
 
   const maxNumberOfQuestions = quiz.questions.length;
+  const indexOfCorrectAnswer = quiz.questions[indexOfCurrentQuestion].options.indexOf(quiz.questions[indexOfCurrentQuestion].answer);
 
   const reducer = (state, action) => {
     switch (action.type) {

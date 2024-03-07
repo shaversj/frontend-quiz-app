@@ -16,7 +16,15 @@ const QuizQuestion = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, inde
               className={"space-y-3"}
             >
               {question.options.map((option, idx) => (
-                <QuizButton key={idx} iconIndex={idx} text={option} idx={idx} highlightedIndex={indexOfSelectedAnswer} questionDispatch={questionDispatch} />
+                <QuizButton
+                  key={idx}
+                  iconIndex={idx}
+                  text={option}
+                  idx={idx}
+                  highlightedIndex={indexOfSelectedAnswer}
+                  questionDispatch={questionDispatch}
+                  isSubmitted={isAnswerSubmitted}
+                />
               ))}
               {isAnswerSubmitted ? (
                 <>
