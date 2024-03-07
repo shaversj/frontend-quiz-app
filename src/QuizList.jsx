@@ -49,6 +49,7 @@ const QuizList = ({ quiz, quizDispatch }) => {
             indexOfCurrentQuestion={indexOfCurrentQuestion}
             maxNumberOfQuestions={maxNumberOfQuestions}
             questionDispatch={questionDispatch}
+            indexOfCorrectAnswer={indexOfCorrectAnswer}
           />
         </>
       )}

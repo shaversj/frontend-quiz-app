@@ -1,6 +1,6 @@
 import QuizButton from "./QuizButton.jsx";
 
-const QuizQuestion = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, indexOfCurrentQuestion, maxNumberOfQuestions, questionDispatch }) => {
+const QuizQuestion = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, indexOfCurrentQuestion, maxNumberOfQuestions, questionDispatch, indexOfCorrectAnswer }) => {
   return (
     <>
       <div className={"px-6 pt-[32px]"}>
@@ -24,6 +24,7 @@ const QuizQuestion = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, inde
                   highlightedIndex={indexOfSelectedAnswer}
                   questionDispatch={questionDispatch}
                   isSubmitted={isAnswerSubmitted}
+                  indexOfCorrectAnswer={indexOfCorrectAnswer}
                 />
               ))}
               {isAnswerSubmitted ? (
