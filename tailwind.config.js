@@ -13,6 +13,7 @@ export default {
         "grey-navy": "#626c7f",
         "light-grey": "#f4f6fa",
         "secondary-purple": "#A729F5",
+        "secondary-light-purple": "#F6E7FF",
         "secondary-green": "#26D782",
         "secondary-red": "#EE5454",
       },

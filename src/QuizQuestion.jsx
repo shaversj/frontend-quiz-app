@@ -18,13 +18,13 @@ const QuizQuestion = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, inde
               {question.options.map((option, idx) => (
                 <QuizButton
                   key={idx}
-                  iconIndex={idx}
+                  iconLetter={String.fromCharCode(65 + idx)}
                   text={option}
                   idx={idx}
-                  highlightedIndex={indexOfSelectedAnswer}
-                  questionDispatch={questionDispatch}
+                  isSelected={indexOfSelectedAnswer === idx}
+                  isCorrect={idx === indexOfCorrectAnswer}
                   isSubmitted={isAnswerSubmitted}
-                  indexOfCorrectAnswer={indexOfCorrectAnswer}
+                  questionDispatch={questionDispatch}
                 />
               ))}
               {isAnswerSubmitted ? (
@@ -35,7 +35,7 @@ const QuizQuestion = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, inde
                 </>
               ) : (
                 <>
-                  <button type={"submit"} className={"w-full rounded-xl bg-secondary-purple py-[19px] leading-none"}>
+                  <button type={"submit"} className={"w-full rounded-xl bg-secondary-purple py-[19px] leading-none hover:bg-[#d494fa]"}>
                     <span className={"font-Rubik-Medium text-[18px] text-white"}>Submit Answer</span>
                   </button>
                 </>

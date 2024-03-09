@@ -1,47 +1,22 @@
 import Icon from "./Icon.jsx";
 import { cn } from "./utils.jsx";
 
-const QuizButton = ({ iconIndex, text, idx, highlightedIndex, questionDispatch, isSubmitted, indexOfCorrectAnswer }) => {
-  const isSelected = highlightedIndex === idx;
-  const isCorrect = idx === indexOfCorrectAnswer;
-  let baseButton = "flex w-full items-center gap-x-[16px] rounded-xl bg-white p-3 shadow-lg ";
-  let buttonColor = "";
-  let iconColor = "";
-  if (isSelected && isSubmitted && isCorrect) {
-    // green border and green checkmark
-    buttonColor = "border-4 border-secondary-green";
-  } else if (isSubmitted && isCorrect) {
-    // green checkmark
-    buttonColor = "";
-  } else if (isSelected && isSubmitted && !isCorrect) {
-    // red border and red x
-    buttonColor = "border-4 border-secondary-red";
-  } else if (isSelected) {
-    buttonColor = "border-4 border-secondary-purple";
-  } else if (isCorrect && !isSelected) {
-  } else {
-    buttonColor = baseButton;
-  }
+const QuizButton = ({ iconLetter, text, idx, isSelected, isSubmitted, questionDispatch, isCorrect }) => {
   const addSpaceBetweenColon = /(\d+(\.\d+)?)\:/g;
   return (
     <button
       type={"button"}
       onClick={() => questionDispatch({ type: "SELECT_ANSWER", idx })}
       className={cn(
-        "flex w-full items-center gap-x-[16px] rounded-xl bg-white p-3 shadow-lg",
+        "group flex w-full items-center gap-x-[16px] rounded-xl bg-white p-3 shadow-lg",
         { "border-4 border-secondary-purple": isSelected },
-        { "border-secondary-green border-4": isSelected && isSubmitted && isCorrect },
-        { "border-secondary-red border-4": isSelected && isSubmitted && !isCorrect },
+        { "pointer-events-none": isSubmitted },
+        { "border-secondary-green pointer-events-none border-4": isSelected && isSubmitted && isCorrect },
+        { "border-secondary-red pointer-events-none border-4": isSelected && isSubmitted && !isCorrect },
       )}
-      // className={
-      //   highlightedIndex === idx
-      //     ? "flex w-full items-center gap-x-[16px] rounded-xl border-4 border-secondary-purple bg-white p-3 shadow-lg"
-      //     : "flex w-full items-center gap-x-[16px] rounded-xl bg-white p-3 shadow-lg"
-      // }
     >
-      <span>
-        <Icon iconIndex={iconIndex} classNames={""} highlightedIndex={highlightedIndex} />
-      </span>
+      <Icon iconLetter={iconLetter} isSubmitted={isSubmitted} isCorrect={isCorrect} isSelected={isSelected} />
+
       <h1 className={"text-left font-Rubik-Medium text-[18px] leading-6 text-dark-navy"}>{text.replace(addSpaceBetweenColon, "$1 : ")}</h1>
 
       {isSubmitted && (
