@@ -1,4 +1,5 @@
 import Icon from "./Icon.jsx";
+import { cn } from "./utils.jsx";
 
 const QuizButton = ({ iconIndex, text, idx, highlightedIndex, questionDispatch, isSubmitted, indexOfCorrectAnswer }) => {
   const isSelected = highlightedIndex === idx;
@@ -22,16 +23,21 @@ const QuizButton = ({ iconIndex, text, idx, highlightedIndex, questionDispatch, 
     buttonColor = baseButton;
   }
   const addSpaceBetweenColon = /(\d+(\.\d+)?)\:/g;
-
   return (
     <button
       type={"button"}
       onClick={() => questionDispatch({ type: "SELECT_ANSWER", idx })}
-      className={
-        highlightedIndex === idx
-          ? "flex w-full items-center gap-x-[16px] rounded-xl border-4 border-secondary-purple bg-white p-3 shadow-lg"
-          : "flex w-full items-center gap-x-[16px] rounded-xl bg-white p-3 shadow-lg"
-      }
+      className={cn(
+        "flex w-full items-center gap-x-[16px] rounded-xl bg-white p-3 shadow-lg",
+        { "border-4 border-secondary-purple": isSelected },
+        { "border-secondary-green border-4": isSelected && isSubmitted && isCorrect },
+        { "border-secondary-red border-4": isSelected && isSubmitted && !isCorrect },
+      )}
+      // className={
+      //   highlightedIndex === idx
+      //     ? "flex w-full items-center gap-x-[16px] rounded-xl border-4 border-secondary-purple bg-white p-3 shadow-lg"
+      //     : "flex w-full items-center gap-x-[16px] rounded-xl bg-white p-3 shadow-lg"
+      // }
     >
       <span>
         <Icon iconIndex={iconIndex} classNames={""} highlightedIndex={highlightedIndex} />
