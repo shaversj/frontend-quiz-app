@@ -3,7 +3,7 @@ import { ICONS } from "./constants.jsx";
 const Icon = ({ iconLetter, isSelected, isSubmitted, isCorrect }) => {
   return (
     <>
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className={"flex-shrink-0"} width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           className={cn(
             "fill-light-grey group-hover:fill-[#F6E7FF]",

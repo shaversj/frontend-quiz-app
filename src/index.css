@@ -43,7 +43,7 @@ html {
     background-color: #A729F5;
 }
 
-#test {
+#app-container {
     background-image: url("/src/assets/images/eclipse-mobile-light.svg");
     background-repeat: no-repeat;
 

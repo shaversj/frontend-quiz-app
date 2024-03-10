@@ -9,7 +9,8 @@ const QuizList = ({ quiz, quizDispatch }) => {
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
 
   const maxNumberOfQuestions = quiz.questions.length;
-  const indexOfCorrectAnswer = quiz.questions[indexOfCurrentQuestion].options.indexOf(quiz.questions[indexOfCurrentQuestion].answer);
+  const indexOfCorrectAnswer =
+    indexOfCurrentQuestion < maxNumberOfQuestions ? quiz.questions[indexOfCurrentQuestion].options?.indexOf(quiz.questions[indexOfCurrentQuestion].answer) : null;
 
   const reducer = (state, action) => {
     switch (action.type) {
@@ -19,7 +20,8 @@ const QuizList = ({ quiz, quizDispatch }) => {
       case "SUBMIT_ANSWER":
         action.e.preventDefault();
         setNumberOfCorrectAnswers(
-          numberOfCorrectAnswers + (indexOfSelectedAnswer === state.questions[indexOfCurrentQuestion].options.indexOf(state.questions[indexOfCurrentQuestion].answer) ? 1 : 0),
+          numberOfCorrectAnswers +
+            (indexOfSelectedAnswer === state.questions[indexOfCurrentQuestion].options?.indexOf(state.questions[indexOfCurrentQuestion].answer) ? 1 : 0),
         );
         setIsAnswerSubmitted(true);
         return state;
