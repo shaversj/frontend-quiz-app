@@ -128,7 +128,7 @@ export const quizData = {
       ],
     },
     {
-      title: "JavaScript",
+      title: "Javascript",
       icon: "src/assets/images/javascript.svg",
       questions: [
         {
