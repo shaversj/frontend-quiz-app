@@ -9,7 +9,7 @@ const QuizButton = ({ iconLetter, text, idx, isSelected, isSubmitted, questionDi
       type={"button"}
       onClick={() => questionDispatch({ type: "SELECT_ANSWER", idx })}
       className={cn(
-        "group flex w-full items-center gap-x-[16px] rounded-xl bg-white p-3 shadow-lg",
+        "group flex w-full items-center gap-x-[16px] rounded-xl bg-white p-3 shadow-lg md:rounded-3xl",
         { "border-4 border-secondary-purple": isSelected },
         { "pointer-events-none": isSubmitted },
         { "pointer-events-none border-4 border-secondary-green": isSelected && isSubmitted && isCorrect },

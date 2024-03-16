@@ -46,13 +46,16 @@ const QuizQuestion = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, inde
 
               {isAnswerSubmitted ? (
                 <>
-                  <button type={"submit"} className={"mt-3 w-full rounded-xl bg-secondary-purple py-[19px] leading-none md:mt-[32px] md:py-[32px]"}>
+                  <button type={"submit"} className={"mt-3 w-full rounded-xl bg-secondary-purple py-[19px] leading-none md:mt-[32px] md:rounded-3xl md:py-[32px]"}>
                     <span className={"font-Rubik-Medium text-[18px] text-white md:text-[28px]"}>Next Question</span>
                   </button>
                 </>
               ) : (
                 <>
-                  <button type={"submit"} className={"mt-3 w-full rounded-xl bg-secondary-purple py-[19px] leading-none hover:bg-[#d494fa] md:mt-[32px] md:py-[32px]"}>
+                  <button
+                    type={"submit"}
+                    className={"mt-3 w-full rounded-xl bg-secondary-purple py-[19px] leading-none hover:bg-[#d494fa] md:mt-[32px] md:rounded-3xl md:py-[32px]"}
+                  >
                     <span className={"font-Rubik-Medium text-[18px] text-white md:text-[28px]"}>Submit Answer</span>
                   </button>
                   {onSubmitWithoutSelect && (indexOfSelectedAnswer === null || indexOfSelectedAnswer === undefined) && (
