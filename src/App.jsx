@@ -23,7 +23,7 @@ function App() {
   const [state, quizDispatch] = useReducer(reducer, initialState);
   return (
     <>
-      <div id={"app-container"} className={"font-Rubik h-[812px] max-w-screen-sm bg-light-grey md:max-w-screen-md lg:max-w-screen-lg"}>
+      <div id={"app-container"} className={"font-Rubik h-[812px] max-w-screen-sm bg-light-grey md:h-[1024px] md:max-w-screen-md lg:max-w-screen-lg"}>
         {isQuizVisible ? (
           <>
             <Header iconPath={state.icon} text={state.title} />

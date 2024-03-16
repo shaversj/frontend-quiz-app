@@ -5,14 +5,14 @@ const QuizQuestion = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, inde
   const [onSubmitWithoutSelect, setOnSubmitWithoutSelect] = useState(false);
   return (
     <>
-      <div className={"px-6 pt-[32px]"}>
+      <div className={"px-6 pt-[32px] md:px-[64px]"}>
         <div className={"font-Rubik"}>
           <p className={"font-Rubik-Italic text-[14px] text-grey-navy"}>
             Question {indexOfCurrentQuestion + 1} of {maxNumberOfQuestions}
           </p>
-          <p className={"pt-3 font-Rubik-Medium text-[20px] leading-6 text-dark-navy"}>{question.question}</p>
-          <progress className={"w-full pt-[24px]"} max={maxNumberOfQuestions} value={indexOfCurrentQuestion + 1} />
-          <div className={"pt-[50px]"}>
+          <p className={"pt-3 font-Rubik-Medium text-[20px] leading-6 text-dark-navy md:pt-[27px] md:text-[34px] md:leading-[1.1em]"}>{question.question}</p>
+          <progress className={"w-full pt-[24px] md:pt-[40px]"} max={maxNumberOfQuestions} value={indexOfCurrentQuestion + 1} />
+          <div className={"pt-[50px] md:pt-[64px]"}>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -27,30 +27,33 @@ const QuizQuestion = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, inde
                       questionDispatch({ type: "SUBMIT_ANSWER", e });
                     })();
               }}
-              className={"space-y-3"}
+              className={""}
             >
-              {question.options.map((option, idx) => (
-                <QuizButton
-                  key={idx}
-                  iconLetter={String.fromCharCode(65 + idx)}
-                  text={option}
-                  idx={idx}
-                  isSelected={indexOfSelectedAnswer === idx}
-                  isCorrect={idx === indexOfCorrectAnswer}
-                  isSubmitted={isAnswerSubmitted}
-                  questionDispatch={questionDispatch}
-                />
-              ))}
+              <div className={"space-y-3 md:space-y-4"}>
+                {question.options.map((option, idx) => (
+                  <QuizButton
+                    key={idx}
+                    iconLetter={String.fromCharCode(65 + idx)}
+                    text={option}
+                    idx={idx}
+                    isSelected={indexOfSelectedAnswer === idx}
+                    isCorrect={idx === indexOfCorrectAnswer}
+                    isSubmitted={isAnswerSubmitted}
+                    questionDispatch={questionDispatch}
+                  />
+                ))}
+              </div>
+
               {isAnswerSubmitted ? (
                 <>
-                  <button type={"submit"} className={"w-full rounded-xl bg-secondary-purple py-[19px] leading-none"}>
-                    <span className={"font-Rubik-Medium text-[18px] text-white"}>Next Question</span>
+                  <button type={"submit"} className={"mt-3 w-full rounded-xl bg-secondary-purple py-[19px] leading-none md:mt-[32px] md:py-[32px]"}>
+                    <span className={"font-Rubik-Medium text-[18px] text-white md:text-[28px]"}>Next Question</span>
                   </button>
                 </>
               ) : (
                 <>
-                  <button type={"submit"} className={"w-full rounded-xl bg-secondary-purple py-[19px] leading-none hover:bg-[#d494fa]"}>
-                    <span className={"font-Rubik-Medium text-[18px] text-white"}>Submit Answer</span>
+                  <button type={"submit"} className={"mt-3 w-full rounded-xl bg-secondary-purple py-[19px] leading-none hover:bg-[#d494fa] md:mt-[32px] md:py-[32px]"}>
+                    <span className={"font-Rubik-Medium text-[18px] text-white md:text-[28px]"}>Submit Answer</span>
                   </button>
                   {onSubmitWithoutSelect && (indexOfSelectedAnswer === null || indexOfSelectedAnswer === undefined) && (
                     <>

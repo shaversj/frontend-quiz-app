@@ -17,7 +17,7 @@ const QuizButton = ({ iconLetter, text, idx, isSelected, isSubmitted, questionDi
       )}
     >
       <Icon iconLetter={iconLetter} isSubmitted={isSubmitted} isCorrect={isCorrect} isSelected={isSelected} />
-      <span className={"text-left font-Rubik-Medium text-[18px] leading-6 text-dark-navy"}>{text.replace(addSpaceBetweenColon, "$1 : ")}</span>
+      <span className={"text-left font-Rubik-Medium text-[18px] leading-6 text-dark-navy md:text-[22px]"}>{text.replace(addSpaceBetweenColon, "$1 : ")}</span>
       {isSubmitted && (isCorrect || (isSelected && isSubmitted && !isCorrect)) && <CircleIcon isCorrect={isCorrect} />}
     </button>
   );
