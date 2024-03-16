@@ -6,7 +6,7 @@ const HomePage = ({ quizDispatch }) => {
     <>
       <main className={"px-6 pt-6 md:px-[64px] lg:flex lg:items-start lg:px-[140px] lg:pt-[99px]"}>
         <div className={"lg:basis-1/2"}>
-          <h1 className={"font-Rubik-Light text-[40px] font-light leading-[2.82rem] text-dark-navy md:text-[64px] md:leading-[64px]"}>
+          <h1 className={"font-Rubik-Light text-[40px] leading-[2.82rem] text-dark-navy md:text-[64px] md:leading-[64px]"}>
             Welcome to the <strong className={"font-Rubik-Medium"}>Frontend Quiz!</strong>
           </h1>
 
