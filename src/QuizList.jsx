@@ -3,52 +3,55 @@ import { useReducer, useState } from "react";
 import QuizScore from "./QuizScore.jsx";
 
 const QuizList = ({ quiz, quizDispatch }) => {
-  const [indexOfCurrentQuestion, setIndexOfCurrentQuestion] = useState(0);
-  const [numberOfCorrectAnswers, setNumberOfCorrectAnswers] = useState(0);
-  const [indexOfSelectedAnswer, setIndexOfSelectedAnswer] = useState();
-  const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
-
-  const maxNumberOfQuestions = quiz.questions.length;
-  const indexOfCorrectAnswer =
-    indexOfCurrentQuestion < maxNumberOfQuestions ? quiz.questions[indexOfCurrentQuestion].options?.indexOf(quiz.questions[indexOfCurrentQuestion].answer) : null;
+  const [state, setState] = useState({
+    indexOfCurrentQuestion: 0,
+    numberOfCorrectAnswers: 0,
+    indexOfSelectedAnswer: null,
+    isAnswerSubmitted: false,
+  });
 
   const reducer = (state, action) => {
     switch (action.type) {
       case "SELECT_ANSWER":
-        setIndexOfSelectedAnswer(action.idx);
-        return state;
+        return { ...state, indexOfSelectedAnswer: action.idx };
       case "SUBMIT_ANSWER":
         action.e.preventDefault();
-        setNumberOfCorrectAnswers(
-          numberOfCorrectAnswers +
-            (indexOfSelectedAnswer === state.questions[indexOfCurrentQuestion].options?.indexOf(state.questions[indexOfCurrentQuestion].answer) ? 1 : 0),
-        );
-        setIsAnswerSubmitted(true);
-        return state;
+        return {
+          ...state,
+          numberOfCorrectAnswers:
+            state.numberOfCorrectAnswers +
+            (state.indexOfSelectedAnswer === quiz.questions[state.indexOfCurrentQuestion].options?.indexOf(quiz.questions[state.indexOfCurrentQuestion].answer) ? 1 : 0),
+          isAnswerSubmitted: true,
+        };
       case "GOTO_NEXT_QUESTION":
         action.e.preventDefault();
-        setIndexOfCurrentQuestion(indexOfCurrentQuestion + 1);
-        setIndexOfSelectedAnswer(null);
-        setIsAnswerSubmitted(false);
-        return state;
+        return { ...state, indexOfCurrentQuestion: state.indexOfCurrentQuestion + 1, indexOfSelectedAnswer: null, isAnswerSubmitted: false };
     }
   };
 
-  const [state, questionDispatch] = useReducer(reducer, quiz);
+  const [questionState, questionDispatch] = useReducer(reducer, state);
+  const maxNumberOfQuestions = quiz.questions.length;
+  const indexOfCorrectAnswer = quiz.questions[questionState.indexOfCurrentQuestion]?.options?.indexOf(quiz.questions[questionState.indexOfCurrentQuestion].answer);
 
   return (
     <>
-      {indexOfCurrentQuestion >= maxNumberOfQuestions ? (
+      {questionState.indexOfCurrentQuestion >= maxNumberOfQuestions ? (
         <>
-          <QuizScore text={quiz.title} iconPath={quiz.icon} numOfCorrectAnswers={numberOfCorrectAnswers} numOfQuestions={maxNumberOfQuestions} quizDispatch={quizDispatch} />
+          <QuizScore
+            text={quiz.title}
+            iconPath={quiz.icon}
+            numOfCorrectAnswers={questionState.numberOfCorrectAnswers}
+            numOfQuestions={maxNumberOfQuestions}
+            quizDispatch={quizDispatch}
+          />
         </>
       ) : (
         <>
           <QuizQuestion
-            isAnswerSubmitted={isAnswerSubmitted}
-            indexOfSelectedAnswer={indexOfSelectedAnswer}
-            question={quiz.questions[indexOfCurrentQuestion]}
-            indexOfCurrentQuestion={indexOfCurrentQuestion}
+            isAnswerSubmitted={questionState.isAnswerSubmitted}
+            indexOfSelectedAnswer={questionState.indexOfSelectedAnswer}
+            question={quiz.questions[questionState.indexOfCurrentQuestion]}
+            indexOfCurrentQuestion={questionState.indexOfCurrentQuestion}
             maxNumberOfQuestions={maxNumberOfQuestions}
             questionDispatch={questionDispatch}
             indexOfCorrectAnswer={indexOfCorrectAnswer}

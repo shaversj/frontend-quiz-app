@@ -1,4 +1,3 @@
-import React from "react";
 import { QUIZ_IMAGES } from "./constants.jsx";
 
 const HomePage = ({ quizDispatch }) => {
