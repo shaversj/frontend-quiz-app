@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Switch } from "@headlessui/react";
 
 const Header = ({ iconPath, text }) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);

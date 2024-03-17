@@ -1,4 +1,4 @@
-import Header from "./components/Header.jsx";
+import Header from "./pages/Header.jsx";
 import Home from "./pages/Home.jsx";
 import Quiz from "./components/Quiz.jsx";
 import { quizData } from "./utils/quizData.jsx";
