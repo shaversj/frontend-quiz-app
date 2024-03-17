@@ -5,11 +5,7 @@ const Question = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, indexOfC
   const [onSubmitWithoutSelect, setOnSubmitWithoutSelect] = useState(false);
   return (
     <>
-      <div
-        className={
-          "min-h-[814px] px-6 pt-[32px] md:min-h-[1024px] md:px-[64px] md:pt-[49px] lg:flex lg:min-h-[850px] lg:items-start lg:gap-x-[28px] lg:px-[140px] lg:pt-[85px]"
-        }
-      >
+      <div className={"px-6 pt-[32px] md:px-[64px] md:pt-[49px] lg:flex lg:items-start lg:gap-x-[28px] lg:px-[140px] lg:pt-[85px]"}>
         <div className={"lg:basis-1/2 lg:pr-[113px]"}>
           <p className={"font-Rubik-Italic text-[14px] text-grey-navy"}>
             Question {indexOfCurrentQuestion + 1} of {maxNumberOfQuestions}

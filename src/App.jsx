@@ -10,7 +10,12 @@ function App() {
   return (
     <>
       <div className={"grid min-h-screen place-items-center bg-black"}>
-        <div id={"app-container"} className={"font-Rubik mx-auto max-w-screen-sm bg-light-grey md:max-w-screen-md lg:min-w-[1440px] lg:max-w-screen-lg"}>
+        <div
+          id={"app-container"}
+          className={
+            "font-Rubik mx-auto min-h-[814px] max-w-screen-sm bg-light-grey md:min-h-[1024px] md:min-w-[768px] md:max-w-screen-md lg:min-h-[850px] lg:min-w-[1440px] lg:max-w-screen-lg "
+          }
+        >
           {quizState.isQuizVisible ? (
             <>
               <Header iconPath={quizState.quizData.icon} text={quizState.quizData.title} />
