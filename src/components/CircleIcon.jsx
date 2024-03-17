@@ -1,5 +1,5 @@
-import { ICONS } from "./constants.jsx";
-import { cn } from "./utils.jsx";
+import { ICONS } from "../utils/constants.jsx";
+import { cn } from "../utils/utils.jsx";
 
 const CircleIcon = ({ isCorrect }) => {
   return (

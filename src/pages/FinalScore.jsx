@@ -1,10 +1,10 @@
-const QuizScore = ({ iconPath, text, numOfCorrectAnswers, numOfQuestions, quizDispatch }) => {
+const FinalScore = ({ iconPath, text, numOfCorrectAnswers, numOfQuestions, quizDispatch }) => {
   return (
     <>
       <div className={"px-6 pt-[32px] text-dark-navy md:px-[64px] lg:flex lg:items-start lg:pl-[140px] lg:pr-[143px] lg:pt-[85px]"}>
         <p className={"font-Rubik-Regular text-[40px] leading-[2.75rem] md:text-[64px] md:leading-[64px] lg:basis-1/2"}>
-          <h2 className={"font-Rubik-Light"}>Quiz completed</h2>
-          <h2 className={"font-Rubik-Medium"}>You scored...</h2>
+          <span className={"font-Rubik-Light"}>Quiz completed</span>
+          <span className={"block font-Rubik-Medium"}>You scored...</span>
         </p>
 
         <div className={"lg:basis-1/2"}>
@@ -31,4 +31,4 @@ const QuizScore = ({ iconPath, text, numOfCorrectAnswers, numOfQuestions, quizDi
   );
 };
 
-export default QuizScore;
+export default FinalScore;

@@ -1,5 +1,5 @@
 import Icon from "./Icon.jsx";
-import { cn } from "./utils.jsx";
+import { cn } from "../utils/utils.jsx";
 import CircleIcon from "./CircleIcon.jsx";
 
 const QuizButton = ({ iconLetter, text, idx, isSelected, isSubmitted, questionDispatch, isCorrect }) => {

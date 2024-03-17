@@ -46,5 +46,10 @@ html {
 #app-container {
     background-image: url("/src/assets/images/eclipse-mobile-light.svg");
     background-repeat: no-repeat;
+}
 
+@media (min-width: 1440px) {
+    #app-container {
+        background-image: url("/src/assets/images/pattern-background-desktop-light.svg")
+    }
 }

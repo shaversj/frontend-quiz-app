@@ -1,11 +1,15 @@
-import QuizButton from "./QuizButton.jsx";
+import QuizButton from "../components/QuizButton.jsx";
 import { useState } from "react";
 
-const QuizQuestion = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, indexOfCurrentQuestion, maxNumberOfQuestions, questionDispatch, indexOfCorrectAnswer }) => {
+const Question = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, indexOfCurrentQuestion, maxNumberOfQuestions, questionDispatch, indexOfCorrectAnswer }) => {
   const [onSubmitWithoutSelect, setOnSubmitWithoutSelect] = useState(false);
   return (
     <>
-      <div className={"px-6 pt-[32px] md:px-[64px] md:pt-[49px] lg:flex lg:items-start lg:gap-x-[28px] lg:px-[140px] lg:pt-[85px]"}>
+      <div
+        className={
+          "min-h-[814px] px-6 pt-[32px] md:min-h-[1024px] md:px-[64px] md:pt-[49px] lg:flex lg:min-h-[850px] lg:items-start lg:gap-x-[28px] lg:px-[140px] lg:pt-[85px]"
+        }
+      >
         <div className={"lg:basis-1/2 lg:pr-[113px]"}>
           <p className={"font-Rubik-Italic text-[14px] text-grey-navy"}>
             Question {indexOfCurrentQuestion + 1} of {maxNumberOfQuestions}
@@ -81,4 +85,4 @@ const QuizQuestion = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, inde
   );
 };
 
-export default QuizQuestion;
+export default Question;

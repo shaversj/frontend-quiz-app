@@ -1,5 +1,5 @@
-import { cn } from "./utils.jsx";
-import { ICONS } from "./constants.jsx";
+import { cn } from "../utils/utils.jsx";
+import { ICONS } from "../utils/constants.jsx";
 const Icon = ({ iconLetter, isSelected, isSubmitted, isCorrect }) => {
   return (
     <>
