@@ -8,25 +8,25 @@ html {
 
 @font-face {
     font-family: "Rubik-Medium";
-    src: url('src/assets/fonts/static/Rubik-Medium.ttf')
+    src: url('/src/assets/fonts/static/Rubik-Medium.ttf')
 
 }
 
 @font-face {
     font-family: "Rubik-Regular";
-    src: url('src/assets/fonts/static/Rubik-Regular.ttf')
+    src: url('/src/assets/fonts/static/Rubik-Regular.ttf')
 
 }
 
 @font-face {
     font-family: "Rubik-Italic";
-    src: url('src/assets/fonts/static/Rubik-Italic.ttf')
+    src: url('/src/assets/fonts/static/Rubik-Italic.ttf')
 
 }
 
 @font-face {
     font-family: "Rubik-Light";
-    src: url('src/assets/fonts/static/Rubik-Light.ttf')
+    src: url('/src/assets/fonts/static/Rubik-Light.ttf')
 
 }
 

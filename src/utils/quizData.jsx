@@ -2,7 +2,7 @@ export const quizData = {
   quizzes: [
     {
       title: "HTML",
-      icon: "src/assets/images/html.svg",
+      icon: "./html.svg",
       questions: [
         {
           question: "What does HTML stand for?",
@@ -73,7 +73,7 @@ export const quizData = {
     },
     {
       title: "CSS",
-      icon: "src/assets/images/css.svg",
+      icon: "./css.svg",
       questions: [
         {
           question: "What does CSS stand for?",
@@ -129,7 +129,7 @@ export const quizData = {
     },
     {
       title: "Javascript",
-      icon: "src/assets/images/javascript.svg",
+      icon: "./javascript.svg",
       questions: [
         {
           question: "Which syntax is correct to output 'Hello World' in an alert box?",
@@ -195,7 +195,7 @@ export const quizData = {
     },
     {
       title: "Accessibility",
-      icon: "src/assets/images/accessibility.svg",
+      icon: "./accessibility.svg",
       questions: [
         {
           question: "What does 'WCAG' stand for?",
