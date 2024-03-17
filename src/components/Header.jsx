@@ -2,7 +2,16 @@ import React, { useState } from "react";
 import { Switch } from "@headlessui/react";
 
 const Header = ({ iconPath, text }) => {
-  const [enabled, setEnabled] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  };
 
   return (
     <header className={"flex h-[72px] px-6 md:px-[64px] md:pt-[60px] lg:pl-[140px] lg:pr-[143px] lg:pt-[110px]"}>
@@ -21,9 +30,9 @@ const Header = ({ iconPath, text }) => {
           />
         </svg>
 
-        <Switch checked={enabled} onChange={setEnabled} className={"relative inline-flex h-5 w-8 items-center rounded-full bg-secondary-purple md:h-7 md:w-12"}>
+        <Switch checked={darkMode} onChange={toggleDarkMode} className={"relative inline-flex h-5 w-8 items-center rounded-full bg-secondary-purple md:h-7 md:w-12"}>
           <span className="sr-only">Enable notifications</span>
-          <span className={`${enabled ? "translate-x-4 md:translate-x-6" : "translate-x-1"} inline-block h-3 w-3 transform rounded-full bg-white transition md:h-5 md:w-5`} />
+          <span className={`${darkMode ? "translate-x-4 md:translate-x-6" : "translate-x-1"} inline-block h-3 w-3 transform rounded-full bg-white transition md:h-5 md:w-5`} />
         </Switch>
 
         <svg className={"h-4 w-4 md:h-6 md:w-6"} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
