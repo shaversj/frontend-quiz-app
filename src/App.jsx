@@ -13,7 +13,7 @@ function App() {
         <div
           id={"app-container"}
           className={
-            "font-Rubik mx-auto min-h-[814px] max-w-screen-sm bg-light-grey md:min-h-[1024px] md:min-w-[768px] md:max-w-screen-md lg:min-h-[850px] lg:min-w-[1440px] lg:max-w-screen-lg "
+            "font-Rubik mx-auto min-h-[814px] max-w-screen-sm bg-light-grey bg-light-mobile bg-no-repeat md:min-h-[1024px] md:min-w-[768px] md:max-w-screen-md md:bg-light-tablet lg:min-h-[850px] lg:min-w-[1440px] lg:max-w-screen-lg lg:bg-light-desktop dark:bg-dark-navy dark:bg-dark-mobile dark:md:bg-dark-tablet lg:dark:bg-dark-desktop"
           }
         >
           {quizState.isQuizVisible ? (

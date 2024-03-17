@@ -7,10 +7,10 @@ const Question = ({ isAnswerSubmitted, indexOfSelectedAnswer, question, indexOfC
     <>
       <div className={"px-6 pt-[32px] md:px-[64px] md:pt-[49px] lg:flex lg:items-start lg:gap-x-[28px] lg:px-[140px] lg:pt-[85px]"}>
         <div className={"lg:basis-1/2 lg:pr-[113px]"}>
-          <p className={"font-Rubik-Italic text-[14px] text-grey-navy"}>
+          <p className={"dark:text-light-blue font-Rubik-Italic text-[14px] text-grey-navy"}>
             Question {indexOfCurrentQuestion + 1} of {maxNumberOfQuestions}
           </p>
-          <p className={"pt-3 font-Rubik-Medium text-[20px] leading-6 text-dark-navy md:pt-[27px] md:text-[34px] md:leading-[1.1em]"}>{question.question}</p>
+          <p className={"pt-3 font-Rubik-Medium text-[20px] leading-6 text-dark-navy md:pt-[27px] md:text-[34px] md:leading-[1.1em] dark:text-white"}>{question.question}</p>
           <progress className={"w-full pt-[24px] md:pt-[40px] lg:pt-[168px]"} max={maxNumberOfQuestions} value={indexOfCurrentQuestion + 1} />
         </div>
         <div className={"pt-[50px] md:pt-[64px] lg:basis-1/2 lg:pt-0"}>

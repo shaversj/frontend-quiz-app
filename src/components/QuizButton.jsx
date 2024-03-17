@@ -9,7 +9,7 @@ const QuizButton = ({ iconLetter, text, idx, isSelected, isSubmitted, questionDi
       type={"button"}
       onClick={() => questionDispatch({ type: "SELECT_ANSWER", idx })}
       className={cn(
-        "group flex w-full items-center gap-x-[16px] rounded-xl bg-white p-3 shadow-lg md:rounded-3xl",
+        "group flex w-full items-center gap-x-[16px] rounded-xl bg-white p-3 shadow-lg md:rounded-3xl dark:bg-navy",
         { "border-4 border-secondary-purple": isSelected },
         { "pointer-events-none": isSubmitted },
         { "pointer-events-none border-4 border-secondary-green": isSelected && isSubmitted && isCorrect },
@@ -17,7 +17,7 @@ const QuizButton = ({ iconLetter, text, idx, isSelected, isSubmitted, questionDi
       )}
     >
       <Icon iconLetter={iconLetter} isSubmitted={isSubmitted} isCorrect={isCorrect} isSelected={isSelected} />
-      <span className={"text-left font-Rubik-Medium text-[18px] leading-6 text-dark-navy md:text-[22px]"}>{text.replace(addSpaceBetweenColon, "$1 : ")}</span>
+      <span className={"text-left font-Rubik-Medium text-[18px] leading-6 text-dark-navy md:text-[22px] dark:text-white"}>{text.replace(addSpaceBetweenColon, "$1 : ")}</span>
       {isSubmitted && (isCorrect || (isSelected && isSubmitted && !isCorrect)) && <CircleIcon isCorrect={isCorrect} />}
     </button>
   );

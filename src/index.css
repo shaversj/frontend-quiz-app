@@ -43,13 +43,19 @@ html {
     background-color: #A729F5;
 }
 
-#app-container {
-    background-image: url("/src/assets/images/eclipse-mobile-light.svg");
-    background-repeat: no-repeat;
-}
-
-@media (min-width: 1440px) {
-    #app-container {
-        background-image: url("/src/assets/images/pattern-background-desktop-light.svg")
+html.dark {
+    ::-webkit-progress-bar {
+    background-color: #3b4d66;
     }
+
 }
+/*#app-container {*/
+/*    background-image: url("/src/assets/images/eclipse-mobile-light.svg");*/
+/*    background-repeat: no-repeat;*/
+/*}*/
+
+/*@media (min-width: 1440px) {*/
+/*    #app-container {*/
+/*        background-image: url("/src/assets/images/pattern-background-desktop-light.svg")*/
+/*    }*/
+/*}*/

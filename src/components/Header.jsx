@@ -9,7 +9,7 @@ const Header = ({ iconPath, text }) => {
       {iconPath && (
         <div className={"flex items-center gap-x-4"}>
           <img className={"h-[40px] w-[40px] md:h-[56px] md:w-[56px]"} src={iconPath} alt={""} />
-          <h1 className={"text-left font-Rubik-Medium text-[18px] leading-6 text-dark-navy md:text-[28px]"}>{text}</h1>
+          <h1 className={"text-left font-Rubik-Medium text-[18px] leading-6 text-dark-navy md:text-[28px] dark:text-white"}>{text}</h1>
         </div>
       )}
 
